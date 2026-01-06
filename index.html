@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Túi Tote Thêu Tên | Phong Cách Của Bạn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">BDTote.</div>
+            <ul class="nav-links">
+                <li><a href="#customizer">Thiết Kế</a></li>
+                <li><a href="#features">Chất Liệu</a></li>
+                <li><a href="#about">Về Chúng Tôi</a></li>
+            </ul>
+            <div class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="customizer" class="hero-section">
+            <div class="container">
+                <div class="product-display">
+                    <div class="bag-container">
+                        <img src="assets/tote-bag.png" alt="Túi Tote Canvas Cao Cấp" id="bag-image">
+                        <div id="text-overlay" class="embroidery-text">Tên Của Bạn</div>
+                    </div>
+                </div>
+
+                <div class="controls-panel">
+                    <h1>Túi Tote Thêu Tên Riêng</h1>
+                    <p class="subtitle">Đơn giản. Tinh tế. Là chính bạn.</p>
+
+                    <div class="price-tag">50.000₫</div>
+
+                    <div class="control-group">
+                        <label for="custom-text">Nhập tên của bạn</label>
+                        <input type="text" id="custom-text" placeholder="Ví dụ: Khanh Vy" maxlength="15">
+                    </div>
+
+                    <div class="control-group">
+                        <label>Chọn màu chỉ</label>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="#333333"
+                                style="background-color: #333333;"></button>
+                            <button class="color-btn" data-color="#8B4513" style="background-color: #8B4513;"></button>
+                            <button class="color-btn" data-color="#2F4F4F" style="background-color: #2F4F4F;"></button>
+                            <button class="color-btn" data-color="#CD5C5C" style="background-color: #CD5C5C;"></button>
+                            <button class="color-btn" data-color="#4682B4" style="background-color: #4682B4;"></button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Font chữ</label>
+                        <select id="font-select">
+                            <option value="'Playfair Display', serif">Cổ điển (Serif)</option>
+                            <option value="'Outfit', sans-serif">Hiện đại (Sans-serif)</option>
+                            <option value="'Courier New', monospace">Máy đánh chữ</option>
+                        </select>
+                    </div>
+
+                    <button id="add-to-cart-btn" class="cta-button">
+                        <span>Thêm vào giỏ</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+
+                    <p class="shipping-note">🚚 Freeship cho đơn hàng từ 500k</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="feature-card">
+                    <h3>Canvas Cao Cấp</h3>
+                    <p>Vải dày dặn, bền bỉ, thân thiện môi trường.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Thêu Tỉ Mỉ</h3>
+                    <p>Từng đường kim mũi chỉ được chăm chút cẩn thận.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Thiết Kế Riêng</h3>
+                    <p>Mỗi chiếc túi là một tác phẩm độc bản của bạn.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Thanh Toán & Đặt Hàng</h2>
+
+            <div class="checkout-grid">
+                <!-- Info Form -->
+                <div class="checkout-form">
+                    <h3>Thông tin giao hàng</h3>
+                    <div class="form-group">
+                        <label for="cx-name">Họ và tên *</label>
+                        <input type="text" id="cx-name" required placeholder="Nguyễn Văn A">
+                    </div>
+                    <div class="form-group">
+                        <label for="cx-phone">Số điện thoại *</label>
+                        <input type="tel" id="cx-phone" required placeholder="0901234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="cx-address">Địa chỉ nhận hàng *</label>
+                        <textarea id="cx-address" rows="3" required
+                            placeholder="Số nhà, đường, phường/xã..."></textarea>
+                    </div>
+
+                    <h3>Xác thực thanh toán</h3>
+                    <div class="form-group">
+                        <label for="cx-upload">Ảnh chuyển khoản *</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="cx-upload" accept="image/*">
+                            <div class="file-upload-btn">Chọn ảnh</div>
+                            <span id="file-name">Chưa chọn file</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Info -->
+                <div class="payment-info">
+                    <h3>Thanh toán qua QR</h3>
+                    <div class="qr-container">
+                        <img src="assets/qr-code.png" alt="Mã QR Thanh Toán">
+                        <p class="qr-note">Quét mã để chuyển khoản nhanh</p>
+                    </div>
+                    <div class="order-summary-box">
+                        <p>Sản phẩm: <strong>1 Túi Tote Thêu Tên</strong></p>
+                        <p>Tổng cộng: <strong class="price-highlight">50.000₫</strong></p>
+                    </div>
+                    <button id="submit-order-btn" class="submit-btn" disabled>Hoàn tất đặt hàng</button>
+                    <p id="form-error" class="error-msg"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tote. Được làm thủ công với ❤️ tại Việt Nam.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
