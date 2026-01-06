@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             colorBtns.forEach(b => b.classList.remove('active'));
             // Add active to clicked
             btn.classList.add('active');
-            
+
             // Update text color
             const color = btn.getAttribute('data-color');
             textOverlay.style.color = color;
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Animation feedback
         addToCartBtn.innerHTML = `<span>Đã thêm!</span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
         addToCartBtn.style.backgroundColor = '#4CAF50';
-        
+
         // Update count
         cartItems++;
         cartCount.innerText = cartItems;
-        
+
         // Reset button after 2 seconds
         setTimeout(() => {
             addToCartBtn.innerHTML = `<span>Thêm vào giỏ</span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`;
@@ -111,11 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Validation
     function validateForm() {
-        const isValid = nameInput.value.trim() !== '' && 
-                        phoneInput.value.trim() !== '' && 
-                        addressInput.value.trim() !== '' && 
-                        fileInput.files.length > 0;
-        
+        const isValid = nameInput.value.trim() !== '' &&
+            phoneInput.value.trim() !== '' &&
+            addressInput.value.trim() !== '' &&
+            fileInput.files.length > 0;
+
         submitBtn.disabled = !isValid;
         return isValid;
     }
@@ -158,28 +158,28 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(orderData)
         })
-        .then(() => {
-            alert("Đặt hàng thành công!\nĐơn hàng đã được lưu vào hệ thống.\nChúng tôi sẽ liên hệ sớm.");
-            
-            modal.classList.remove('show');
-            setTimeout(() => { modal.style.display = 'none'; }, 300);
-            
-            cartItems = 0;
-            cartCount.innerText = '0';
-            
-            nameInput.value = '';
-            phoneInput.value = '';
-            addressInput.value = '';
-            fileInput.value = '';
-            fileNameDisplay.textContent = "Chưa chọn file";
-            submitBtn.innerHTML = "Hoàn tất đặt hàng";
-            submitBtn.disabled = false;
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại!");
-            submitBtn.innerHTML = "Hoàn tất đặt hàng";
-            submitBtn.disabled = false;
-        });
+            .then(() => {
+                alert("Đặt hàng thành công!\nĐơn hàng đã được lưu vào hệ thống.\nChúng tôi sẽ liên hệ sớm.");
+
+                modal.classList.remove('show');
+                setTimeout(() => { modal.style.display = 'none'; }, 300);
+
+                cartItems = 0;
+                cartCount.innerText = '0';
+
+                nameInput.value = '';
+                phoneInput.value = '';
+                addressInput.value = '';
+                fileInput.value = '';
+                fileNameDisplay.textContent = "Chưa chọn file";
+                submitBtn.innerHTML = "Hoàn tất đặt hàng";
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Có lỗi xảy ra khi gửi đơn hàng. Vui lòng thử lại!");
+                submitBtn.innerHTML = "Hoàn tất đặt hàng";
+                submitBtn.disabled = false;
+            });
     });
 });
